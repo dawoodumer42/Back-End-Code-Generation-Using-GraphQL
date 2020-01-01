@@ -1,0 +1,43 @@
+body {
+	background: #454a50;
+}
+
+.search-form {
+	margin-top: 16px;
+}
+
+.txt-white {
+	color: white !important;
+}
+
+.form-start {
+	margin-left: 30%;
+	margin-right: 30%;
+	margin-top: 40px;
+	padding: 25px;
+	border-radius: 3px;
+}
+
+.main_body {
+	border-radius: 3px;
+	padding: 25px;
+	margin-top: 40px;
+}
+
+.center {
+    text-align: center;
+}
+
+.project_body {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.modal-lg {
+    max-width: 95% !important;
+}
+
+.checkbox {
+    margin-left:15px;
+    margin-top:10px;
+}

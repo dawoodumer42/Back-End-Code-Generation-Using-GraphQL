@@ -1,0 +1,181 @@
+<html lang="en">
+<head>
+    <title>Project Name Here</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>    
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img src="graphql.png" style="width: 50px; height: 50px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="projects.html">My Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profile</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a type="button" class="nav-link btn btn-success txt-white" href="#" data-toggle="modal" data-target="#myModal">Create New +</a>
+                </li> -->
+            </ul>
+            <form class="form-inline search-form">
+                <input class="form-control mr-sm-2 bg-dark txt-white" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 txt-white" type="submit">Search</button>
+            </form>
+        </div>
+        
+    </nav>
+    <!-- Navbar End -->
+    
+    <!-- Project  -->
+    <div class="bg-light  main_body container">
+        <!-- Header Project-->
+        <div class="row">
+            <div class="col-md-11">
+                <h1>Project 4</h1>
+            </div>
+            <div class="col-md-1">
+                <a type="button" class="btn btn-success btn-md btn-block" href="projects.html">Save</a>
+            </div>
+        </div>
+        <hr/>
+        
+        <!-- Project Body -->
+        <div class="project_body">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Schema</h3>
+                </div>     
+                <div class="col-md-2">
+                    <a type="button" class="btn btn-success btn-md btn-block" href="#" data-toggle="modal" data-target="#myModal">Add Table</a>
+                </div>       
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-md-2">
+                    <h5>Table 1</h5>
+                </div>            
+                <div class="col-md-2">
+                    <p>4 columns</p>
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Edit</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Delete</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h5>Table 2</h5>
+                </div>            
+                <div class="col-md-2">
+                    <p>4 columns</p>
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Edit</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Delete</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <h5>Table 3</h5>
+                </div>            
+                <div class="col-md-2">
+                    <p>4 columns</p>
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Edit</a>
+                </div>
+                <div class="col-md-1">
+                    <a href="#">Delete</a>
+                </div>
+            </div>
+        </div>
+        <hr/>
+         <!-- The Modal -->
+        
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+                        <form action="edit_project.html" mehtod="GET">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">New Table </h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input type="text" class="form-control " placeholder="Table Name" id="name">
+                                </div>
+                                <!-- Table Columns -->
+                                <div class="table-responsive">
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr>
+                                                <th>Name:</th>
+                                                <th>Type:</th>
+                                                <th>Length/Value:</th>
+                                                <th>Default:</th>
+                                                <th>NULL:</th>
+                                                <th>AI:</th>
+                                                <th>User Access:</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- Rows to be added from the javascript function 'addRow' -->
+                                        </tbody>
+                                    </table>
+                                    <a href="#" onclick="addRow();">Add More Rows<a>
+                                </div>
+                            </div>
+                            
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-success" >Create</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function(){
+        addRow();
+    });
+
+    function addRow() {
+        var markup = `<tr>
+                        <td><input type="text" placeholder="Name" class="form-control" /></td>
+                        <td><select class="form-control"><option   value="0">VARCHAR</option></select></td>
+                        <td><input type="text" placeholder="Length" class="form-control" /></td>
+                        <td><input type="text" placeholder="Default" class="form-control" /></td>
+                        <td><input type="checkbox" class="checkbox" /></td>
+                        <td><input type="checkbox" class="checkbox" /></td>
+                        <td><input type="checkbox" class="checkbox" /></td>
+                    </tr>`;
+        $("table tbody").append(markup);
+        // alert('asdfas');
+    }
+</script>
+</html>
